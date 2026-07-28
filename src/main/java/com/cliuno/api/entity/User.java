@@ -26,6 +26,8 @@ public class User {
     @Column(unique = true)
     public String phone;
 
+    public String avatarUrl;
+
     @JsonIgnore
     @Column(nullable = false)
     public String password;

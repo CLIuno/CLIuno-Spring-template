@@ -116,5 +116,8 @@ public class UserController {
         if (body.get("phone") != null) {
             user.phone = body.get("phone");
         }
+        if (body.get("avatar_url") != null) {
+            user.avatarUrl = body.get("avatar_url");
+        }
     }
 }

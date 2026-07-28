@@ -34,3 +34,7 @@ build/
 
 # local sqlite database
 db.sqlite
+
+# uploaded images
+uploads/*
+!uploads/.gitkeep

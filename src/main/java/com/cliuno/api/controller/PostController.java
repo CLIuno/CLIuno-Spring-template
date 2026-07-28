@@ -55,6 +55,8 @@ public class PostController {
         Post post = new Post();
         post.title = title;
         post.content = content;
+        // frontends may send either casing; image_url is what goes back out
+        post.imageUrl = body.get("image_url") != null ? body.get("image_url") : body.get("imageUrl");
         post.user = user;
         posts.save(post);
         return Api.created("Post created successfully", Api.data("post", post));
@@ -78,7 +80,10 @@ public class PostController {
         if (body.get("content") != null) {
             post.content = body.get("content");
         }
-        if (body.get("imageUrl") != null) {
+        // frontends may send either casing; image_url is what goes back out
+        if (body.get("image_url") != null) {
+            post.imageUrl = body.get("image_url");
+        } else if (body.get("imageUrl") != null) {
             post.imageUrl = body.get("imageUrl");
         }
         posts.save(post);

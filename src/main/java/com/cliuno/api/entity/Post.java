@@ -19,7 +19,7 @@ public class Post {
     @Column(nullable = false)
     public String content;
 
-    @JsonProperty("imageUrl")
+    @JsonProperty("image_url")
     public String imageUrl;
 
     public boolean isPaid = false;
